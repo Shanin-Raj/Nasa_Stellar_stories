@@ -14,62 +14,6 @@ A beautiful, educational storybook about space weather featuring Sunny the Solar
 ### Images Folder
 Place your images in the `images/` folder with these exact names:
 
-**Cover Page (Optional):**
-- `cover-background.jpg` - Background image for cover page (any size, will auto-fit)
-
-**Single Images (Pages 2, 4-12) - 1024x1024px:**
-- `page2-maya-iss.jpg` - Maya sees the ISS
-- `page4-sunny-gus-erupt.jpg` - Solar flare eruption
-- `page5-space-radiation.jpg` - Astronauts in shielded area
-- `page6-magnetosphere.jpg` - CME hits Earth's magnetic field
-- `page7-gps-glitch.jpg` - Pilot with flickering GPS
-- `page8-power-grid.jpg` - Power transformer overload
-- `page9-farmer-gps.jpg` - Farmer's tractor GPS error
-- `page10-magnetic-funnel.jpg` - Energy funneled to poles
-- `page11-aurora.jpg` - Beautiful aurora lights
-- `page12-sun-earth.jpg` - Sun and Earth relationship
-
-**Dual Images (Page 3):**
-- `page3-iss-interior.jpg` - Inside the ISS
-- `page3-solar-flare-alert.jpg` - Solar flare detection screen
-
-## 🖼️ Image Specifications
-
-### Cover Page Background Image
-- **File Name**: `cover-background.jpg`
-- **Size**: Any size (will be auto-fitted)
-- **Format**: JPG, PNG, or WebP
-- **Effect**: Displayed with 40% opacity, slight blur, and brightness adjustment
-- **Fallback**: Beautiful gradient background if no image provided
-
-### Story Page Images: **1024 x 1024 pixels**
-- **Format**: JPG, PNG, or WebP
-- **Aspect Ratio**: 1:1 (square)
-- **Recommended**: High quality, vibrant colors
-- **File Size**: Under 2MB each for fast loading
-
-## 🎨 Image Frame Features
-
-- **Beautiful borders** with white inner frame and decorative outer border
-- **Professional shadows** for depth and realism
-- **Automatic sizing** maintains perfect square proportions
-- **Page 3 special layout** displays two images side by side
-- **Responsive design** works on all screen sizes
-
-## 🚀 How to Add Your Images
-
-1. **Prepare Images**: 
-   - Resize story images to 1024x1024px if needed
-   - Cover image can be any size (landscape recommended for best effect)
-2. **Name Files**: Use exact names from the list above
-3. **Place in Folder**: Copy to `/images/` folder
-4. **Open Storybook**: Launch `index.html` in browser
-5. **Enjoy**: Your images will appear in beautiful frames!
-
-### Cover Image Options:
-- **With Cover Image**: Place `cover-background.jpg` in `/images/` folder
-- **Without Cover Image**: Storybook will use the beautiful gradient background
-- **Auto-Detection**: If image doesn't exist, gradient shows automatically
 
 ## ✨ Features
 
@@ -134,8 +78,6 @@ Nasa_storybook/
 ├── index.html          # Main storybook page
 ├── styles.css          # Complete styling
 ├── script.js           # Interactive functionality
-├── upload.html         # Image upload utility (optional)
-├── upload.js           # Upload functionality (optional)
 ├── images/             # Your story images folder
 │   ├── cover-background.jpg     # Cover image (optional)
 │   ├── page2-maya-iss.jpg       # Story images
