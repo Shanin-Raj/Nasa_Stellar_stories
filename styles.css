@@ -1,0 +1,524 @@
+/* ===========================================
+   STELLAR STORIES - COMPLETE STYLESHEET
+   =========================================== */
+
+/* General page styling */
+body {
+    margin: 0;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    background: #f5f5dc;
+    color: #2c1810;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Main container - full viewport */
+.main-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Page counter styling */
+.page-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #8B4513;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    font-family: 'Amatic SC', cursive;
+    border: 2px solid #DEB887;
+}
+
+/* Navigation controls */
+.navigation {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    min-width: 120px;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #764ba2, #667eea);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Science button */
+.science-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Amatic SC', cursive;
+    background: linear-gradient(145deg, #8B4513, #A0522D);
+    color: white;
+    border: 3px solid #DEB887;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    font-weight: bold;
+}
+
+.science-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #A0522D, #8B4513);
+}
+
+/* The storybook element - full viewport */
+#storybook {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5dc;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+/* Add subtle page turn effect */
+.page::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(to left, rgba(0,0,0,0.1), transparent);
+    pointer-events: none;
+}
+
+/* Styling for each page - full viewport like real storybook */
+.page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    scroll-snap-align: start;
+    background-color: #fefefe;
+    background-image: 
+        radial-gradient(circle at 20px 20px, rgba(0,0,0,0.02) 1px, transparent 1px),
+        radial-gradient(circle at 80px 80px, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.05);
+}
+
+/* The left side of the page (image) */
+.page-image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #fff8dc, #faf0e6);
+    padding: 20px;
+}
+
+/* Standard single image frame - Perfect for 1024x1024px */
+.page-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 40px rgba(0,0,0,0.15),
+        0 0 0 3px #ffffff,
+        0 0 0 6px #DEB887;
+    filter: sepia(5%) contrast(1.05) brightness(1.02);
+}
+
+/* Page 3 special layout for 2 images */
+.page-image.dual-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+.page-image.dual-image img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 
+        0 8px 25px rgba(0,0,0,0.12),
+        0 0 0 2px #ffffff,
+        0 0 0 4px #DEB887;
+}
+
+/* The right side of the page (text) */
+.page-text {
+    flex: 1;
+    padding: 60px 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    line-height: 1.8;
+    font-size: 21px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.page-text h1 {
+    font-size: 3.2em;
+    color: #8B4513;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-text h2 {
+    font-size: 2.5em;
+    color: #A0522D;
+    font-family: 'Amatic SC', cursive;
+    text-align: left;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #DEB887;
+    padding-bottom: 10px;
+}
+
+/* Character dialogue styling */
+.page-text strong {
+    color: #8B0000;
+    font-weight: bold;
+    font-size: 1.08em;
+}
+
+/* Narrative text */
+.page-text p {
+    margin: 20px 0;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #1a0f0a;
+    font-weight: 400;
+}
+
+/* Character dialogue paragraphs */
+.page-text p strong {
+    display: block;
+    margin-bottom: 5px;
+    text-indent: 0;
+    color: #8B4513;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.3em;
+}
+
+/* First letter styling - only for the first story page (page 2) */
+.page[data-page="2"] .page-text p:first-of-type::first-letter {
+    font-size: 5em;
+    float: left;
+    line-height: 0.8;
+    margin: 0.1em 0.1em 0 0;
+    font-family: 'Amatic SC', cursive;
+    color: #8B4513;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+/* Cover page styles */
+#cover-page {
+    background: linear-gradient(135deg, #ff8c00, #ff6b35, #f7931e, #ff0080);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 !important;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cover background image */
+.cover-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cover-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    filter: blur(2px) brightness(0.8);
+    transition: all 0.3s ease;
+}
+
+/* If no image is found, hide the container */
+.cover-bg-img[src*="cover-background.jpg"]:not([src]) {
+    display: none;
+}
+
+/* Fallback for missing cover image */
+.cover-background-image img[src="images/cover-background.jpg"] {
+    opacity: 0;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cover-content h1 { 
+    font-family: 'Amatic SC', cursive;
+    font-size: 6em; 
+    margin: 0; 
+    font-weight: bold;
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.cover-content h2 { 
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em; 
+    font-weight: 400;
+    margin: 30px 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    font-style: italic;
+}
+
+.cover-content .emojis { 
+    font-size: 5em; 
+    margin: 40px 0;
+    animation: bounce 2.5s infinite;
+}
+
+.cover-content p {
+    font-size: 1.4em;
+    max-width: 600px;
+    margin: 20px auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+@keyframes glow {
+    from { text-shadow: 4px 4px 12px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3); }
+    to { text-shadow: 4px 4px 12px rgba(0,0,0,0.8), 0 0 30px rgba(255,255,255,0.6); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Science Popup Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background-color: white;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.science-content {
+    padding: 20px 0;
+}
+
+.science-content h2 {
+    color: #8B4513;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #DEB887;
+    padding-bottom: 10px;
+}
+
+.science-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c1810;
+    margin: 15px 0;
+    text-align: justify;
+}
+
+.science-content strong {
+    color: #8B4513;
+    font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+        height: 100vh;
+    }
+    
+    .page-image, .page-text {
+        flex: none;
+    }
+    
+    .page-image {
+        height: 50vh;
+        padding: 10px;
+    }
+    
+    .page-image img {
+        max-width: 300px;
+    }
+    
+    .page-image.dual-image {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .page-image.dual-image img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .page-text {
+        height: 50vh;
+        padding: 20px;
+        font-size: 18px;
+    }
+    
+    .page-text h2 {
+        font-size: 2em;
+    }
+    
+    .cover-content h1 {
+        font-size: 4em;
+    }
+    
+    .cover-content h2 {
+        font-size: 1.8em;
+    }
+    
+    .navigation {
+        bottom: 15px;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        min-width: 100px;
+    }
+    
+    .science-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-text {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .page-text p {
+        font-size: 1em;
+        text-indent: 15px;
+    }
+    
+    .page-counter {
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

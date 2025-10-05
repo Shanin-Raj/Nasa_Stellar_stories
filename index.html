@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Stories: Sunny's Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Page counter -->
+        <div class="page-counter">
+            <span id="current-page">1</span> / <span id="total-pages">12</span>
+        </div>
+
+        <div id="storybook">
+            
+            <!-- COVER PAGE -->
+            <div class="page" id="cover-page">
+                <!-- Cover Background Image (Optional) -->
+                <div class="cover-background-image">
+                    <img id="cover-img" src="images/cover.jpeg" alt="Space weather background" class="cover-bg-img">
+                </div>
+                <div class="cover-content">
+                    <h1>STELLAR STORIES</h1>
+                    <h2>Sunny's Space Weather Adventure!</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <p>A tale about the Sun's power and Earth's shield.</p>
+                </div>
+            </div>
+
+            <!-- PAGE 2: Maya sees ISS -->
+            <div class="page" data-page="2">
+                <div class="page-image">
+                    <img id="page2-img" src="images/child.png" alt="A little girl, Maya, on her terrace at night, looking up at a bright light in the sky.">
+                </div>
+                <div class="page-text">
+                    <h2>A Nighttime Wonder</h2>
+                    <p>On a clear night, little Maya was playing on her terrace. When she looked around, she saw a bright, moving light high above!</p>
+                    <p><strong>Maya:</strong> "Wow, it's so shiny! What could it be?"</p>
+                    <p>It was the <strong>International Space Station (ISS),</strong> reflecting the distant sunlight!</p>
+                </div>
+            </div>
+
+            <!-- PAGE 3: Astronaut Warning (2 Images) -->
+            <div class="page" data-page="3">
+                <div class="page-image dual-image">
+                    <img id="page3-img1" src="images/iss.jpeg" alt="Inside the ISS, astronauts working.">
+                    <img id="page3-img2" src="images/insideiss.jpeg" alt="Solar flare detection alert screen.">
+                </div>
+                <div class="page-text">
+                    <h2>The Astronaut's Warning</h2>
+                    <p>We zoomed right into the ISS, where Astronaut Alex and his crew were working. Suddenly, a siren wailed!</p>
+                    <p><strong>A. Alex (Astronaut):</strong> "Alert! Radiation levels are spiking! Get to the shielded area—we just got an eight-minute warning from the Sun!"</p>
+                </div>
+            </div>
+            
+            <!-- PAGE 4: Sunny's Birth -->
+            <div class="page" data-page="4">
+                <div class="page-image">
+                    <img id="page4-img" src="images/flaregeneration.png" alt="A solar flare (Sunny) erupts from the sun, followed by a slower cloud (Gus the CME).">
+                </div>
+                <div class="page-text">
+                    <h2>Sunny's Birth</h2>
+                    <p>Back at the Sun, 93 million miles away, the explosion was in full force!</p>
+                    <p><strong>Sunny (Flare):</strong> "I'm the flash of light! The start of the storm! I've already sent my warning message to Earth!"</p>
+                    <p>Right behind the speeding <strong>Solar Flare,</strong> a massive bubble of super-hot gas burst out—Gus the Gassy Cloud, the <strong>Coronal Mass Ejection (CME)!</strong> Gus was slower, but much more powerful.</p>
+                </div>
+            </div>
+
+            <!-- PAGE 5: Space Radiation Alert -->
+            <div class="page" data-page="5">
+                <div class="page-image">
+                    <img id="page5-img" src="images/insideiss.jpeg" alt="Astronauts are safe in a shielded area of the ISS as a cloud of particles passes by.">
+                </div>
+                <div class="page-text">
+                    <h2>The First Alert: Space Radiation</h2>
+                    <p>Eight minutes after his warning flash, Sunny flew past the ISS! Now, the real danger was arriving: Gus and his charged particles.</p>
+                    <p><strong>A. Alex (Astronaut):</strong> "Good thing Sunny gave us that <strong>space radiation</strong> warning! We're safe in here while Gus passes. The solar storm is underway!"</p>
+                </div>
+            </div>
+
+            <!-- PAGE 6: Earth's Shield -->
+            <div class="page" data-page="6">
+                <div class="page-image">
+                    <img id="page6-img" src="images/flare_enter_earth.png" alt="A cloud of gas hitting an invisible shield around Planet Earth.">
+                </div>
+                <div class="page-text">
+                    <h2>The Earth's Invisible Shield</h2>
+                    <p>Gus finally reached Earth's magnetic bubble—the <strong>Magnetosphere!</strong> It's our planet's invisible shield, batting away most of the solar wind. But Gus was too big! He slammed into the shield, causing it to shake and wobble! This wobble is the <strong>Geomagnetic Storm!</strong></p>
+                </div>
+            </div>
+            
+            <!-- PAGE 7: Flight Path Glitches -->
+            <div class="page" data-page="7">
+                <div class="page-image">
+                    <img id="page7-img" src="images/plane.jpeg" alt="Inside a plane cockpit, a pilot looks at a flickering GPS screen.">
+                </div>
+                <div class="page-text">
+                    <h2>Flight Path Glitches</h2>
+                    <p>Inside an airplane, Pilot Jack saw his instruments flicker. The storm was disrupting the <strong>Ionosphere,</strong> scrambling satellite signals!</p>
+                    <p><strong>Jack (Pilot):</strong> "Our GPS and satellite radio are glitching! The solar particles are bending the signals. Switching to our backup guidance!"</p>
+                </div>
+            </div>
+            
+            <!-- PAGE 8: Power Grid Alarm -->
+            <div class="page" data-page="8">
+                <div class="page-image">
+                    <img id="page8-img" src="images/current.png" alt="A large electrical transformer sparking under stress.">
+                </div>
+                <div class="page-text">
+                    <h2>Power Grid Alarm</h2>
+                    <p>The shaking magnetic field created electricity on the ground—a <strong>GIC (Geomagnetically Induced Current)!</strong></p>
+                    <p><strong>Grid Operator George:</strong> "Alert! That solar storm is pushing too much current into our power lines! We need to shut down these big transformers before they overload!"</p>
+                </div>
+            </div>
+            
+            <!-- PAGE 9: Farmer's Crooked Rows -->
+            <div class="page" data-page="9">
+                <div class="page-image">
+                    <img id="page9-img" src="images/farmer.png" alt="An advanced tractor in a field with a GPS error on its screen.">
+                </div>
+                <div class="page-text">
+                    <h2>The Farmer's Crooked Rows</h2>
+                    <p>Back in the field, Farmer Finn's advanced tractor suddenly stopped, its high-precision GPS signal lost.</p>
+                    <p><strong>Farmer Finn:</strong> "My fertilizer dispenser needs that satellite signal to make perfectly straight rows! Thanks to Gus, my crop alignment is temporarily ruined!"</p>
+                </div>
+            </div>
+            
+            <!-- PAGE 10: Happy Ending -->
+            <div class="page" data-page="10">
+                <div class="page-image">
+                    <img id="page10-img" src="images/poles.png" alt="Earth's magnetic field funneling energy towards the North and South Poles.">
+                </div>
+                <div class="page-text">
+                    <h2>A Happy Ending!</h2>
+                    <p>But wait! Earth's clever magnetic field had a plan. It funneled all the leftover solar energy away from the vulnerable technology. Sunny and Gus's particles were guided safely down towards the Earth's North and South Poles.</p>
+                </div>
+            </div>
+            
+            <!-- PAGE 11: Aurora Light Show -->
+            <div class="page" data-page="11">
+                <div class="page-image">
+                    <img id="page11-img" src="images/Aurora.jpeg" alt="People watching the beautiful green and purple lights of the Aurora Borealis.">
+                </div>
+                <div class="page-text">
+                    <h2>The Greatest Light Show!</h2>
+                    <p>The solar energy mixed harmlessly with the air, creating shimmering curtains of light: the <strong>Aurora Borealis</strong> and Australis! The General Public looked up in awe, forgetting about power glitches and lost GPS—it was a magnificent sight!</p>
+                </div>
+            </div>
+
+            <!-- PAGE 12: The End -->
+            <div class="page" data-page="12">
+                 <div class="page-image">
+                    <img id="page12-img" src="images/last.jpeg" alt="A simple drawing of the Sun smiling at the Earth.">
+                </div>
+                <div class="page-text">
+                    <h2>The End</h2>
+                    <p>The Sun is powerful, but Earth is protected! Every solar storm is a reminder of the amazing relationship between our star and our planet.</p>
+                    <p>Thank you for joining Sunny's adventure.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation controls -->
+        <div class="navigation">
+            <button id="prev-btn" class="nav-btn">← Previous</button>
+            <button id="next-btn" class="nav-btn">Next →</button>
+        </div>
+        
+        <!-- View Science Button -->
+        <button id="view-science-btn" class="science-button">🔬 View Science Behind This Page</button>
+
+        <!-- Science Popup -->
+        <div id="science-popup" class="overlay">
+            <div class="popup">
+                <button class="close-btn">&times;</button>
+                <div class="science-content">
+                    <h2 id="science-content-title">Science Behind This Page</h2>
+                    <div id="science-content-text">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
