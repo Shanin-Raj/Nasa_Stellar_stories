@@ -47,7 +47,7 @@ Each page includes scientifically accurate explanations of:
 
 - **Desktop**: Side-by-side image and text layout
 - **Tablet**: Optimized for touch navigation
-- **Mobile**: Stacked layout for small screens
+- **Mobile**: Stacked layout for small screens (recommended to view in desktop site for good reading experience) 
 - **All devices**: Maintains beautiful image frames
 
 ## 🚀 Deployment
