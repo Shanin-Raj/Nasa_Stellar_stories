@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Images - Stellar Stories</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background: #f5f5dc;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .upload-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #8B4513;
+            font-family: 'Amatic SC', cursive;
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+        
+        .page-section {
+            margin-bottom: 40px;
+            border: 2px solid #DEB887;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .page-title {
+            font-size: 1.5em;
+            color: #A0522D;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .upload-area {
+            border: 3px dashed #DEB887;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin: 10px 0;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover {
+            background: #f0f8ff;
+            border-color: #8B4513;
+        }
+        
+        .upload-area.dragover {
+            background: #e6f3ff;
+            border-color: #4169E1;
+        }
+        
+        .upload-btn {
+            background: #8B4513;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        
+        .upload-btn:hover {
+            background: #A0522D;
+        }
+        
+        .preview-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .preview-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #DEB887;
+        }
+        
+        .page3-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .generate-btn {
+            background: #228B22;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-family: 'Amatic SC', cursive;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: background 0.3s ease;
+        }
+        
+        .generate-btn:hover {
+            background: #32CD32;
+        }
+        
+        .instructions {
+            background: #fff8dc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #8B4513;
+            margin-bottom: 30px;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload Images for Stellar Stories</h1>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <p>• Upload square images (1024x1024px recommended)</p>
+            <p>• Page 3 requires 2 images (they will be displayed side by side)</p>
+            <p>• All other pages require 1 image each</p>
+            <p>• Supported formats: JPG, PNG, WebP</p>
+        </div>
+        
+        <!-- Cover Page -->
+        <div class="page-section">
+            <div class="page-title">Cover Page - Title Image</div>
+            <div class="upload-area" data-page="cover">
+                <p>Drop cover image here or <button class="upload-btn" onclick="document.getElementById('cover-input').click()">Browse Files</button></p>
+                <input type="file" id="cover-input" accept="image/*" data-page="cover">
+                <div class="preview-container" id="cover-preview"></div>
+            </div>
+        </div>
+        
+        <!-- Page 2 -->
+        <div class="page-section">
+            <div class="page-title">Page 2 - A Nighttime Wonder (Maya sees ISS)</div>
+            <div class="upload-area" data-page="page2">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page2-input').click()">Browse Files</button></p>
+                <input type="file" id="page2-input" accept="image/*" data-page="page2">
+                <div class="preview-container" id="page2-preview"></div>
+            </div>
+        </div>
+        
+        <!-- Page 3 - Special 2 image layout -->
+        <div class="page-section">
+            <div class="page-title">Page 3 - The Astronaut's Warning (2 Images)</div>
+            <div class="page3-images">
+                <div class="upload-area" data-page="page3-1">
+                    <p><strong>Image 1</strong><br>ISS Interior</p>
+                    <button class="upload-btn" onclick="document.getElementById('page3-1-input').click()">Browse Files</button>
+                    <input type="file" id="page3-1-input" accept="image/*" data-page="page3-1">
+                    <div class="preview-container" id="page3-1-preview"></div>
+                </div>
+                <div class="upload-area" data-page="page3-2">
+                    <p><strong>Image 2</strong><br>Solar Flare Alert</p>
+                    <button class="upload-btn" onclick="document.getElementById('page3-2-input').click()">Browse Files</button>
+                    <input type="file" id="page3-2-input" accept="image/*" data-page="page3-2">
+                    <div class="preview-container" id="page3-2-preview"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pages 4-12 -->
+        <div class="page-section">
+            <div class="page-title">Page 4 - Sunny's Birth</div>
+            <div class="upload-area" data-page="page4">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page4-input').click()">Browse Files</button></p>
+                <input type="file" id="page4-input" accept="image/*" data-page="page4">
+                <div class="preview-container" id="page4-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 5 - Space Radiation Alert</div>
+            <div class="upload-area" data-page="page5">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page5-input').click()">Browse Files</button></p>
+                <input type="file" id="page5-input" accept="image/*" data-page="page5">
+                <div class="preview-container" id="page5-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 6 - Earth's Invisible Shield</div>
+            <div class="upload-area" data-page="page6">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page6-input').click()">Browse Files</button></p>
+                <input type="file" id="page6-input" accept="image/*" data-page="page6">
+                <div class="preview-container" id="page6-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 7 - Flight Path Glitches</div>
+            <div class="upload-area" data-page="page7">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page7-input').click()">Browse Files</button></p>
+                <input type="file" id="page7-input" accept="image/*" data-page="page7">
+                <div class="preview-container" id="page7-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 8 - Power Grid Alarm</div>
+            <div class="upload-area" data-page="page8">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page8-input').click()">Browse Files</button></p>
+                <input type="file" id="page8-input" accept="image/*" data-page="page8">
+                <div class="preview-container" id="page8-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 9 - The Farmer's Crooked Rows</div>
+            <div class="upload-area" data-page="page9">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page9-input').click()">Browse Files</button></p>
+                <input type="file" id="page9-input" accept="image/*" data-page="page9">
+                <div class="preview-container" id="page9-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 10 - A Happy Ending</div>
+            <div class="upload-area" data-page="page10">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page10-input').click()">Browse Files</button></p>
+                <input type="file" id="page10-input" accept="image/*" data-page="page10">
+                <div class="preview-container" id="page10-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 11 - The Greatest Light Show (Aurora)</div>
+            <div class="upload-area" data-page="page11">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page11-input').click()">Browse Files</button></p>
+                <input type="file" id="page11-input" accept="image/*" data-page="page11">
+                <div class="preview-container" id="page11-preview"></div>
+            </div>
+        </div>
+        
+        <div class="page-section">
+            <div class="page-title">Page 12 - The End</div>
+            <div class="upload-area" data-page="page12">
+                <p>Drop image here or <button class="upload-btn" onclick="document.getElementById('page12-input').click()">Browse Files</button></p>
+                <input type="file" id="page12-input" accept="image/*" data-page="page12">
+                <div class="preview-container" id="page12-preview"></div>
+            </div>
+        </div>
+        
+        <button class="generate-btn" onclick="generateStorybook()">Generate Updated Storybook</button>
+    </div>
+    
+    <script src="upload.js"></script>
+</body>
+</html>
